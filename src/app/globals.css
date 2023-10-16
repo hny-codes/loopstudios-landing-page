@@ -9,10 +9,12 @@
   --clr-black: hsl(0, 0%, 0%);
   --clr-dark-gray: hsl(0, 0%, 55%);
   --clr-v-dark-gray: hsl(0, 0%, 41%);
+
+  --max-width: 1440px;
 }
 
 @layer components {
   .underline-hover {
-    @apply after:block after:content-[''] after:border-b-4 after:border-white after:scale-x-0 after:transition hover:after:scale-x-100 w-fit;
+    @apply after:block after:content-[''] after:border-b-4 after:border-white after:scale-x-0 after:transition hover:after:scale-x-50 w-fit;
   }
 }

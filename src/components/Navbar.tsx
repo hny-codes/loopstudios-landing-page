@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className='flex justify-between px-6 py-8'>
+      <nav className='flex justify-between px-6 py-8 sm:items-center max-w-[--max-width] mx-auto'>
         {/* Mobile */}
         <svg width='192' height='32' xmlns='http://www.w3.org/2000/svg'>
           <path
@@ -18,7 +18,7 @@ export default function Navbar() {
           />
         </svg>
         {!menu ? (
-          <button onClick={() => setMenu(true)}>
+          <button className='sm:hidden' onClick={() => setMenu(true)}>
             <svg width='24' height='16' xmlns='http://www.w3.org/2000/svg'>
               <g fill='#FFF' fillRule='evenodd'>
                 <path d='M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z' />
@@ -26,7 +26,7 @@ export default function Navbar() {
             </svg>
           </button>
         ) : (
-          <button onClick={() => setMenu(false)}>
+          <button className='sm:hidden' onClick={() => setMenu(false)}>
             <svg width='20' height='20' xmlns='http://www.w3.org/2000/svg'>
               <path
                 d='M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z'
@@ -36,20 +36,48 @@ export default function Navbar() {
             </svg>
           </button>
         )}
+        {/* Desktop */}
+        <div className='hidden sm:flex gap-8 text-lg font-alata text-[--clr-white] sm:items-center'>
+          <Link href={'/'} className='underline-hover'>
+            About
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Careers
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Events
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Products
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Support
+          </Link>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
       <div
         className={`${
           menu ? 'visible' : 'invisible'
-        } bg-[--clr-black] fixed w-full h-full top-0 -z-10`}
+        } bg-[--clr-black] fixed w-full h-full top-0 -z-10 sm:hidden`}
       >
         <div className='flex flex-col gap-4 text-2xl font-alata uppercase text-[--clr-white] px-6 translate-y-56'>
-          <Link href={'/'} className='underline-hover'>About</Link>
-          <Link href={'/'} className='underline-hover'>Careers</Link>
-          <Link href={'/'} className='underline-hover'>Events</Link>
-          <Link href={'/'} className='underline-hover'>Products</Link>
-          <Link href={'/'} className='underline-hover'>Support</Link>
+          <Link href={'/'} className='underline-hover'>
+            About
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Careers
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Events
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Products
+          </Link>
+          <Link href={'/'} className='underline-hover'>
+            Support
+          </Link>
         </div>
       </div>
     </header>
