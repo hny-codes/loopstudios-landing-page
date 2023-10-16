@@ -13,6 +13,9 @@ const config: Config = {
         alata: ['var(--font-alata)'],
       },
     },
+    screens: {
+      'sm': '690px', 
+    }
   },
   plugins: [],
 };
