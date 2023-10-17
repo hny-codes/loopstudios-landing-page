@@ -1,39 +1,12 @@
-import Image from 'next/image';
+import InteractiveContent from './InteractiveContent';
+import InteractiveImage from './InteractiveImage';
 
 export default function InteractiveSection() {
   return (
     <div>
       <section className='px-8 my-24 max-w-[--max-width] mx-auto sm:flex relative'>
-        <div className='sm:hidden'>
-          <Image
-            src={'/images/mobile/image-interactive.jpg'}
-            alt='interactive VR man'
-            width={654}
-            height={448}
-          />
-        </div>
-        <div className='hidden sm:block'>
-          <Image
-            src={'/images/desktop/image-interactive.jpg'}
-            alt='interactive VR man'
-            width={731}
-            height={500}
-          />
-        </div>
-        <header
-          className='text-center sm:text-left mt-12 bg-[--clr-white] sm:w-[50%] sm:px-20 sm:pt-20 sm:ml-auto
-        sm:absolute right-0 bottom-0'
-        >
-          <h2 className='uppercase text-3xl sm:text-5xl tracking-wider font-josefin'>
-            The leader in interactive VR
-          </h2>
-          <p className='mt-4 text-[--clr-dark-gray] font-alata w-10/12 sm:w-full mx-auto text-body'>
-            Founded in 2011, Loopstudios has been producing world-class virtual
-            reality projects for some of the best companies around the globe.
-            Our award-winning creations have transformed businesses through
-            digital experiences that bind to their brand.
-          </p>
-        </header>
+        <InteractiveImage />
+        <InteractiveContent />
       </section>
     </div>
   );
