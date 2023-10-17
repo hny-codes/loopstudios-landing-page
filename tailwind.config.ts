@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'body': '0.938rem'
+      },
       fontFamily: {
         josefin: ['var(--font-josefin)'],
         alata: ['var(--font-alata)'],
