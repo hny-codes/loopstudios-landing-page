@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header>
+    <header className='absolute top-0 w-full z-20'>
       <nav className='flex justify-between px-6 py-8 sm:items-center max-w-[--max-width] mx-auto'>
         {/* Mobile */}
         <svg width='192' height='32' xmlns='http://www.w3.org/2000/svg'>
