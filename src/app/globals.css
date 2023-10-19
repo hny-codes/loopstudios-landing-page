@@ -10,7 +10,7 @@
   --clr-dark-gray: hsl(0, 0%, 55%);
   --clr-v-dark-gray: hsl(0, 0%, 41%);
 
-  --max-width: 1440px;
+  --max-width: 1224px;
 }
 
 @layer components {
