@@ -1,10 +1,10 @@
 export default function InteractiveContent() {
   return (
     <header
-      className='text-center sm:text-left mt-12 bg-[--clr-white] sm:w-[50%] sm:px-20 sm:pt-20 sm:ml-auto
+      className='text-center sm:text-left mt-12 bg-[--clr-white] sm:w-2/3 md:w-1/2 sm:px-20 sm:pt-20 sm:ml-auto
         sm:absolute right-0 bottom-0'
     >
-      <h2 className='uppercase text-3xl sm:text-5xl tracking-wider font-josefin'>
+      <h2 className='uppercase text-3xl sm:text-4xl md:text-5xl tracking-wide font-josefin'>
         The leader in interactive VR
       </h2>
       <p className='mt-4 text-[--clr-dark-gray] font-alata w-10/12 sm:w-full mx-auto text-body'>

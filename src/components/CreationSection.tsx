@@ -4,7 +4,7 @@ import CreationCard from './CreationCard';
 export default function CreationSection() {
   return (
     <div className='mb-28'>
-      <section className='text-center sm:text-left px-8 sm:grid grid-cols-2 max-w-[--max-width] mx-auto sm:pt-20'>
+      <section className='text-center sm:text-left px-6 sm:grid grid-cols-2 max-w-[--max-width] mx-auto sm:pt-20'>
         <h2 className='uppercase text-3xl sm:text-4xl font-josefin mb-10 sm:mb-16'>
           Our Creations
         </h2>
