@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { heroVariant } from '@/util/framerAnimation';
+
 export default function Hero() {
   return (
     <div
@@ -5,9 +10,15 @@ export default function Hero() {
     >
       <section className='max-w-[--max-width] mx-auto w-full'>
         <header>
-          <h1 className='border-2 px-8 py-6 text-4xl sm:text-6xl mx-6 [word-spacing:9999px] sm:[word-spacing:0px] overflow-hidden font-josefin sm:max-w-[33rem] sm:mx-6 uppercase  tracking-wide'>
+          <motion.h1
+            variants={heroVariant}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            className='border-2 px-8 py-6 text-4xl sm:text-6xl mx-6 [word-spacing:9999px] sm:[word-spacing:0px] overflow-hidden font-josefin sm:max-w-[33rem] sm:mx-6 uppercase  tracking-wide'
+          >
             Immersive Experiences That Deliver
-          </h1>
+          </motion.h1>
         </header>
       </section>
     </div>
