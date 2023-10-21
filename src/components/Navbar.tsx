@@ -2,9 +2,19 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { navVariant, menuItemVariant } from '@/util/framerAnimation';
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
+
+  const handleOpen = () => {
+    setMenu((prevState) => !prevState);
+  };
+
+  const handleClose = () => {
+    setMenu((prevState) => !prevState);
+  };
 
   return (
     <header className='absolute top-0 w-full z-20'>
@@ -18,7 +28,7 @@ export default function Navbar() {
           />
         </svg>
         {!menu ? (
-          <button className='sm:hidden' onClick={() => setMenu(true)}>
+          <button className='sm:hidden' onClick={handleOpen}>
             <svg width='24' height='16' xmlns='http://www.w3.org/2000/svg'>
               <g fill='#FFF' fillRule='evenodd'>
                 <path d='M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z' />
@@ -26,8 +36,25 @@ export default function Navbar() {
             </svg>
           </button>
         ) : (
-          <button className='sm:hidden' onClick={() => setMenu(false)}>
-            <svg width='20' height='20' xmlns='http://www.w3.org/2000/svg'>
+          <button className='sm:hidden' onClick={handleClose}>
+            <svg
+              width='20'
+              height='20'
+              xmlns='http://www.w3.org/2000/svg'
+              className={`${menu ? 'block' : 'hidden'}`}
+            >
+              <path
+                d='M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z'
+                fill='#FFF'
+                fillRule='evenodd'
+              />
+            </svg>
+            <svg
+              width='20'
+              height='20'
+              xmlns='http://www.w3.org/2000/svg'
+              className={`${!menu ? 'block' : 'hidden'}`}
+            >
               <path
                 d='M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z'
                 fill='#FFF'
@@ -37,7 +64,7 @@ export default function Navbar() {
           </button>
         )}
         {/* Desktop */}
-        <div className='hidden sm:flex gap-8 text-lg font-alata text-[--clr-white] sm:items-center'>
+        <div className='hidden sm:flex gap-8 text-lg font-alata text-[--clr-white] sm:items-center [&>*]:translate-x-20'>
           <Link href={'/'} className='underline-hover'>
             About
           </Link>
@@ -57,29 +84,33 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div
-        className={`${
-          menu ? 'visible' : 'invisible'
-        } bg-[--clr-black] fixed w-full h-full top-0 -z-10 sm:hidden`}
+      <motion.div
+        variants={navVariant}
+        initial='hidden'
+        animate={menu ? 'visible' : 'hidden'}
+        className={` bg-[--clr-black] fixed w-full h-full top-0 -z-10 sm:hidden `}
       >
-        <div className='flex flex-col gap-4 text-2xl font-alata uppercase text-[--clr-white] px-6 translate-y-56'>
-          <Link href={'/'} className='underline-hover'>
-            About
-          </Link>
-          <Link href={'/'} className='underline-hover'>
-            Careers
-          </Link>
-          <Link href={'/'} className='underline-hover'>
-            Events
-          </Link>
-          <Link href={'/'} className='underline-hover'>
-            Products
-          </Link>
-          <Link href={'/'} className='underline-hover'>
-            Support
-          </Link>
+        <div
+          id='nav-items'
+          className='flex flex-col gap-4 text-2xl font-alata uppercase text-[--clr-white] px-6 translate-y-56'
+        >
+          <motion.div variants={menuItemVariant} className='underline-hover'>
+            <Link href={'/'}>About</Link>
+          </motion.div>
+          <motion.div variants={menuItemVariant} className='underline-hover'>
+            <Link href={'/'}>Careers</Link>
+          </motion.div>
+          <motion.div variants={menuItemVariant} className='underline-hover'>
+            <Link href={'/'}>Events</Link>
+          </motion.div>
+          <motion.div variants={menuItemVariant} className='underline-hover'>
+            <Link href={'/'}>Products</Link>
+          </motion.div>
+          <motion.div variants={menuItemVariant} className='underline-hover'>
+            <Link href={'/'}>Support</Link>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }
