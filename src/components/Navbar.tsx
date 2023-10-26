@@ -10,10 +10,12 @@ export default function Navbar() {
 
   const handleOpen = () => {
     setMenu((prevState) => !prevState);
+    document.body.style.overflow = 'hidden'
   };
 
   const handleClose = () => {
     setMenu((prevState) => !prevState);
+    document.body.style.overflow = 'auto';
   };
 
   return (
