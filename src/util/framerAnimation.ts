@@ -12,7 +12,7 @@ export const navVariant: Variants = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.3,
-      type: 'tween'
+      type: 'tween',
     },
     scale: 1,
     rotate: 360,
@@ -33,5 +33,26 @@ export const menuItemVariant: Variants = {
     transition: {
       type: 'tween',
     },
+  },
+};
+
+export const creationVariant: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const cardVariant: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
   },
 };
