@@ -1,5 +1,9 @@
+'use client';
+
 import Button from './Button';
 import CreationCard from './CreationCard';
+import { motion } from 'framer-motion';
+import { creationVariant } from '@/util/framerAnimation';
 
 export default function CreationSection() {
   return (
@@ -8,7 +12,12 @@ export default function CreationSection() {
         <h2 className='uppercase text-3xl sm:text-4xl font-josefin mb-10 sm:mb-16'>
           Our Creations
         </h2>
-        <div className='grid grid-cols-1 gap-8 mb-10 sm:grid-cols-4 sm:order-2 sm:col-span-2'>
+        <motion.div
+         className='grid grid-cols-1 gap-8 mb-10 sm:grid-cols-4 sm:order-2 sm:col-span-2'
+         variants={creationVariant}
+         initial='hidden'
+         whileInView={'visible'}
+        >
           <CreationCard
             name='Deep Earth'
             mobileImg='/images/mobile/image-deep-earth.jpg'
@@ -49,7 +58,7 @@ export default function CreationSection() {
             mobileImg='/images/mobile/image-fisheye.jpg'
             deskImg='/images/desktop/image-fisheye.jpg'
           />
-        </div>
+        </motion.div>
         <div className='order-1 sm:flex sm:items-start sm:justify-end'>
           <Button text='See all' />
         </div>
